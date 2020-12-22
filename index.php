@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appunti php</title>
+    <title>php-snacks-blocco-1</title>
     <style>
-
+        *{
+            margin: 5px;
+        }
         body {
             background-color: black;
             color: white;   
@@ -29,6 +31,20 @@
     "Accesso negato" -->
 
     <?php 
+        ?>
+        <form name="form" action="" method="GET">
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <br>
+            <label for="mail">Mail</label>
+            <input type="email" name="mail">
+            <br>
+            <label for="age">Age</label>
+            <input type="text" name="age">
+            <br>
+            <button type="submit">Invia</button>
+        </form>
+        <?php
 
         $name = $_GET["name"];
         $mail = $_GET["mail"];
@@ -47,8 +63,8 @@
             strpos($mail, "@") &&
             is_numeric($age)
             ) {
-
-            echo "<h1>ACCESSO RIUSCITO!</h1>";
+            echo "<h1>ACCESSO RIUSCITO!</h1> <br>
+                  <h1>Benvenuto $name, come va? ;)<h1>";
         } else {
             if ($name == null || $mail == null || $age == null) {
                 echo "<h1>Inserisci tutti i dati</h1>";
@@ -56,7 +72,6 @@
                 echo "<h1>ACCESSO NEGATO :(</h1>";
             }           
         }
-
 ?>
 
 
